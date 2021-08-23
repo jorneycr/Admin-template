@@ -12,6 +12,8 @@ html {
 body {
     font-family: $fuente_principal;
     height: 100%;
+    background-color: $gris;
+
 }
 
 img {
@@ -26,9 +28,9 @@ img {
     display: none;
 }
 
-.no-menu.pagina{
-    .sidebar{
-        margin-left: -20rem; 
+.no-menu.pagina {
+    .sidebar {
+        margin-left: -20rem;
     }
 }
 
@@ -85,11 +87,12 @@ img {
         align-items: center;
         padding: 1rem;
 
-        i{
+        i {
             color: $blanco;
             font-size: 1.4rem;
         }
-        .fa-arrow-right{
+
+        .fa-arrow-right {
             display: none;
         }
     }
@@ -156,7 +159,8 @@ img {
             padding-left: 1rem;
         }
     }
-    .menu-admin{
+
+    .menu-admin {
         margin-top: 2rem;
     }
 }
@@ -169,18 +173,20 @@ img {
 
         >li {
             padding: .5rem;
-            &:hover{
-                ul{
+
+            &:hover {
+                ul {
                     display: block;
                 }
             }
 
-            a{
+            a {
                 color: $blanco;
                 text-decoration: none;
                 padding: .5rem;
                 transition: padding-left .3s ease;
-                &:hover{
+
+                &:hover {
                     background-color: $primario;
                     padding-left: 2rem;
                 }
@@ -192,10 +198,11 @@ img {
                 list-style: none;
                 background-color: darken($grisOscuro, 3);
                 padding: 1rem;
-                li{
+
+                li {
                     margin-bottom: 1rem;
 
-                    &:last-of-type{
+                    &:last-of-type {
                         margin-bottom: 0;
                     }
                 }
@@ -207,4 +214,72 @@ img {
 .contenedor-principal {
     flex: 1;
     display: flex;
+}
+
+.contenido {
+    flex: 1;
+    padding: 2rem;
+}
+
+.encabezado {
+    text-align: center;
+}
+
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .campo {
+        display: flex;
+        flex: 0 0 100%;
+        margin-bottom: 1rem;
+        align-items: center;
+
+        @include tablet {
+            flex: 0 0 calc(50% - 1rem);
+        }
+
+        &.expandir {
+            flex: 0 0 calc(100%);
+            align-items: flex-start;
+
+            label {
+                flex: 0 0 12.5%;
+            }
+
+            textarea {
+                flex: 1;
+            }
+        }
+
+        label {
+            flex: 0 0 25%;
+        }
+
+        input[type="text"] {
+            flex: 0 0 75%;
+            height: 2rem;
+        }
+    }
+
+    .opciones {
+        display: flex;
+        flex: 1;
+
+        label {
+            padding-left: 1rem;
+        }
+    }
+
+    .enviar {
+        display: flex;
+        justify-content: flex-end;
+
+        .boton {
+            @include boton($primario);
+        }
+
+    }
+
 }
